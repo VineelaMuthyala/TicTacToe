@@ -1,0 +1,210 @@
+/* Light blue background for the body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #c4f2c4; /* Light blue background */
+    flex-direction: column; /* Column layout to allow stacking the grid and winner message */
+}
+
+/* Game container for centering the content */
+.game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tic Tac Toe board styles */
+.board {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    position: relative; /* To position the winning line correctly */
+}
+
+/* Each row in the board */
+.board-row {
+    display: flex;
+}
+
+/* Styles for each square in the grid */
+.square {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin: 5px;
+    background-color: lightgray; /* Background color for squares */
+    border: 2px solid darkgray;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Smooth transition */
+}
+
+/* Hover effect for squares */
+.square:hover {
+    background-color: #d3d3d3; /* Slightly darker gray on hover */
+}
+
+/* X and O styles */
+.square.x {
+    color: rgb(217, 135, 35); /* Color for X */
+}
+
+.square.o {
+    color: rgb(192, 66, 203); /* Color for O */
+}
+
+/* Winner message and line should not affect grid positioning */
+.winner-message-container {
+    position: relative; /* Prevent it from affecting the grid position */
+    margin-top: 20px; /* Adds space below the grid */
+}
+
+/* Status message style */
+.status {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: center;
+    color: green;
+}
+
+/* Winner symbol styles */
+.winner-symbol.X {
+    color: rgb(217, 135, 35); /* Color for winning X */
+    font-size: 100px;
+}
+
+.winner-symbol.O {
+    color: rgb(192, 66, 203); /* Color for winning O */
+    font-size: 100px;
+}
+
+/* Winner message style */
+.winner-message {
+    font-size: 24px; /* Size for the Winner! message */
+    margin-top: 10px; /* Space between symbol and message */
+    color: rgb(54, 50, 50);
+}
+
+/* Draw message style */
+.draw {
+    font-size: 50px;
+    margin: 0px;
+    color: #ff4500; /* Orange color for draw message */
+}
+
+/* Draw symbols layout */
+.draw-symbols {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between X and O */
+}
+
+.draw-symbols .winner-symbol {
+    font-size: 100px; /* Same size as winner symbol */
+}
+
+/* Winning line styles */
+.winning-line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+    pointer-events: none; /* The line should not interfere with clicks */
+}
+
+/* General line styling */
+.horizontal-row-1, .horizontal-row-2, .horizontal-row-3,
+.vertical-col-1, .vertical-col-2, .vertical-col-3,
+.diagonal-1, .diagonal-2 {
+    position: absolute;
+    height: 3px;
+    background: rgb(93, 78, 78);
+    border-radius: 5px;
+    z-index: 2; /* Ensuring the line is on top of the grid */
+
+}
+
+/* Horizontal line positions */
+.horizontal-row-1 {
+    top: calc(60px * 0 + 5px * 1 + 30px); /* Centered on the first row */
+    left: 0;
+    right: 0;
+}
+
+.horizontal-row-2 {
+    top: calc(60px * 1 + 5px * 2 + 30px); /* Centered on the second row */
+    left: 0;
+    right: 0;
+}
+
+.horizontal-row-3 {
+    top: calc(60px * 2 + 5px * 3 + 30px); /* Centered on the third row */
+    left: 0;
+    right: 0;
+}
+
+/* Vertical line positions */
+/* Ensure the vertical lines cover the full height of the board */
+.vertical-col-1 {
+    left: calc(60px * 0 + 5px * 1 + 30px); /* Centered on the first column */
+    top: 0;
+    bottom: 0;
+    width: 5px; /* Correct width for vertical line */
+    height: 200px;
+}
+
+.vertical-col-2 {
+    left: calc(60px * 1 + 5px * 2 + 30px); /* Centered on the second column */
+    top: 0;
+    bottom: 0;
+    width: 5px; /* Correct width for vertical line */
+    height: 200px;
+}
+
+.vertical-col-3 {
+    left: calc(60px * 2 + 5px * 3 + 30px); /* Centered on the third column */
+    top: 0;
+    bottom: 0;
+    width: 5px; /* Correct width for vertical line */
+    height: 200px;
+}
+
+/* Diagonal line positions */
+/* Adjusted for better alignment */
+.diagonal-1 {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-top: 100px;
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.diagonal-2 {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-top: 100px;
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+.reset-button{
+    border: 2px solid green;
+    background-color: #c4f2c4;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    color: green;
+    font-size: 16px;
+    
+}
+.game-heading{
+    color: green;
+}
